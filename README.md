@@ -1,10 +1,5 @@
 # Advanced Data Structures Laboratory (26PC1L01)
 
-**Name:** _your name_  
-**Register No.:** _your register number_  
-**Programme:** M.E. (CSE)
-
-C programs for the 12 experiments of the Advanced Data Structures Laboratory, with the output of each program.
 
 ## Experiments
 
@@ -23,20 +18,8 @@ C programs for the 12 experiments of the Advanced Data Structures Laboratory, wi
 | 11 | B+ Tree | [Exp11.c](Exp11.c) |
 | 12 | Bloom Filter | [Exp12.c](Exp12.c) |
 
-## Compile and run
-
-```bash
-gcc Exp1.c -o Exp1
-./Exp1
-```
-
-Replace `Exp1` with the experiment number. Experiments 3, 5 and 12 are menu/loop driven; the output below shows the exact inputs used.
-
----
 
 ## Experiment 1: Quick Sort (integers, ascending)
-
-**Aim:** Sort a list of integers in ascending order using Quick Sort.
 
 **Code:** [Exp1.c](Exp1.c)
 
@@ -50,8 +33,6 @@ Sorted array in ascending order:
 ```
 
 ## Experiment 2: Merge Sort (names, descending)
-
-**Aim:** Sort a list of names in descending (case-insensitive) alphabetical order using Merge Sort.
 
 **Code:** [Exp2.c](Exp2.c)
 
@@ -75,8 +56,6 @@ Giri
 ```
 
 ## Experiment 3: Dictionary using Hashing
-
-**Aim:** Insert, search and display using hashing with the division and multiplication methods (linear probing for collisions).
 
 **Code:** [Exp3.c](Exp3.c)
 
@@ -169,8 +148,6 @@ Index Key    Value
 
 ## Experiment 4: Heap Data Structure
 
-**Aim:** Max Heap with insertion (heapify-up) and Heap Sort.
-
 **Code:** [Exp4.c](Exp4.c)
 
 **Output:**
@@ -183,8 +160,6 @@ Sorted array (Ascending using Heap): 1 2 3 6 7
 ```
 
 ## Experiment 5: Fibonacci Heap
-
-**Aim:** Insert, get-minimum and extract-minimum (with consolidation).
 
 **Code:** [Exp5.c](Exp5.c)
 
@@ -290,8 +265,6 @@ Enter choice: 5
 
 ## Experiment 6: AVL Tree
 
-**Aim:** Self-balancing tree with insertion, rotations, in-order and pre-order traversal.
-
 **Code:** [Exp6.c](Exp6.c)
 
 **Output:**
@@ -305,8 +278,6 @@ Height of tree: 3
 ```
 
 ## Experiment 7: Breadth First Search (BFS)
-
-**Aim:** Graph traversal using an adjacency matrix and a queue.
 
 **Code:** [Exp7.c](Exp7.c)
 
@@ -326,8 +297,6 @@ BFS Traversal: 0 1 2 3 4
 
 ## Experiment 8: Depth First Search (DFS)
 
-**Aim:** Graph traversal using an adjacency matrix and recursion.
-
 **Code:** [Exp8.c](Exp8.c)
 
 **Output:**
@@ -345,8 +314,6 @@ DFS Traversal: 0 1 3 4 2
 ```
 
 ## Experiment 9: Dijkstra's Shortest Path
-
-**Aim:** Shortest distances and paths from a given vertex in a weighted graph.
 
 **Code:** [Exp9.c](Exp9.c)
 
@@ -368,8 +335,6 @@ Shortest distances from 0:
 ```
 
 ## Experiment 10: Kruskal's Minimum Spanning Tree
-
-**Aim:** Minimum cost spanning tree using sorted edges and union-find.
 
 **Code:** [Exp10.c](Exp10.c)
 
@@ -393,8 +358,6 @@ Total cost of MST = 7
 
 ## Experiment 11: B+ Tree
 
-**Aim:** Order-4 B+ Tree with insertion, node splitting and leaf-chain traversal.
-
 **Code:** [Exp11.c](Exp11.c)
 
 **Output:**
@@ -415,8 +378,6 @@ Leaf chain: [5 10] [15 20] [25 30]
 ```
 
 ## Experiment 12: Bloom Filter
-
-**Aim:** Membership testing with three hash functions (djb2, sdbm, base-31).
 
 **Code:** [Exp12.c](Exp12.c)
 
