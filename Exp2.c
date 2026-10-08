@@ -55,10 +55,6 @@ void mergeSort(char *arr[], int l, int r)
 int main()
 {
 
-
-
-
-
     int n, i, c;
     char names[MAXN][LEN];
     char *ptr[MAXN];
