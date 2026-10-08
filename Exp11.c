@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXK 3                    /* max keys per node (order 4) */
+#define MAXK 3                    
 #define MAXINS 50
 
 typedef struct BPlusNode {
-    int keys[MAXK + 1];         /* one spare slot for overflow */
+    int keys[MAXK + 1];         
     struct BPlusNode *child[MAXK + 2];
-    struct BPlusNode *next;     /* next leaf */
+    struct BPlusNode *next;     
     int count;
     int isLeaf;
 } BPlusNode;
@@ -26,8 +26,6 @@ BPlusNode *createNode(int isLeaf)
     return n;
 }
 
-/* Inserts key below node. If node splits, returns the new right sibling
-   and stores the separator key in *upKey; otherwise returns NULL. */
 BPlusNode *insertRec(BPlusNode *node, int key, int *upKey)
 {
     int i, j, mid, childUp;
@@ -36,7 +34,7 @@ BPlusNode *insertRec(BPlusNode *node, int key, int *upKey)
     if (node->isLeaf) {
         for (i = 0; i < node->count; i++)
             if (node->keys[i] == key)
-                 return NULL;               /* duplicate ignored */
+                 return NULL;               
         i = node->count - 1;
         while (i >= 0 && node->keys[i] > key) {
             node->keys[i + 1] = node->keys[i];
@@ -45,7 +43,7 @@ BPlusNode *insertRec(BPlusNode *node, int key, int *upKey)
         node->keys[i + 1] = key;
         node->count++;
 
-        if (node->count > MAXK) {           /* leaf overflow: split */
+        if (node->count > MAXK) {           
             mid = node->count / 2;
             sib = createNode(1);
             for (j = mid; j < node->count; j++)
@@ -54,11 +52,9 @@ BPlusNode *insertRec(BPlusNode *node, int key, int *upKey)
             node->count = mid;
 
 
-
-
             sib->next = node->next;
             node->next = sib;
-            *upKey = sib->keys[0];             /* copied up */
+            *upKey = sib->keys[0];            
             return sib;
         }
         return NULL;
@@ -78,7 +74,7 @@ BPlusNode *insertRec(BPlusNode *node, int key, int *upKey)
         node->child[i + 1] = newChild;
         node->count++;
 
-        if (node->count > MAXK) {           /* internal overflow: split */
+        if (node->count > MAXK) {           
             mid = node->count / 2;
             sib = createNode(0);
             for (j = mid + 1; j < node->count; j++)
@@ -86,7 +82,7 @@ BPlusNode *insertRec(BPlusNode *node, int key, int *upKey)
             for (j = mid + 1; j <= node->count; j++)
                 sib->child[j - mid - 1] = node->child[j];
             sib->count = node->count - mid - 1;
-            *upKey = node->keys[mid];       /* moved up */
+            *upKey = node->keys[mid];       
             node->count = mid;
             return sib;
         }
@@ -106,7 +102,7 @@ void insert(int key)
         return;
     }
     sib = insertRec(root, key, &up);
-    if (sib != NULL) {                         /* root split: tree grows */
+    if (sib != NULL) {                         
         newRoot = createNode(0);
         newRoot->keys[0] = up;
         newRoot->child[0] = root;
@@ -135,9 +131,6 @@ void displayTree()
             for (j = 0; j < n->count; j++) {
                 if (j) printf(" ");
                 printf("%d", n->keys[j]);
-
-
-
 
             }
             printf("] ");
