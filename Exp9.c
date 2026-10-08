@@ -52,12 +52,8 @@ int main()
                 min = dist[i];
                 u = i;
             }
-        if (u == -1)                        /* remaining vertices unreachable */
+        if (u == -1)                       
             break;
-
-
-
-
 
          visited[u] = 1;
          for (i = 0; i < n; i++)
