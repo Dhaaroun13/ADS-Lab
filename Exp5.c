@@ -107,7 +107,7 @@ int extractMin(int *out)
         return 0;
     *out = z->key;
 
-    /* move every child of z to the root list */
+    
     c = z->child;
     cnt = z->degree;
     for (i = 0; i < cnt; i++) {
@@ -121,7 +121,7 @@ int extractMin(int *out)
         c = next;
     }
 
-    /* remove z from the root list */
+    
     z->left->right = z->right;
     z->right->left = z->left;
 
