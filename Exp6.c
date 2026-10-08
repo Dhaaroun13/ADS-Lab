@@ -54,24 +54,21 @@ Node *insert(Node *node, int key)
     else if (key > node->key)
         node->right = insert(node->right, key);
 
-
-
-
     else
-        return node;                         /* duplicates are ignored */
+        return node;                         
 
     node->height = 1 + maxOf(h(node->left), h(node->right));
     bal = getBalance(node);
 
-    if (bal > 1 && key < node->left->key)       /* Left Left   */
+    if (bal > 1 && key < node->left->key)      
         return rotateRight(node);
-    if (bal < -1 && key > node->right->key)     /* Right Right */
+    if (bal < -1 && key > node->right->key)     
         return rotateLeft(node);
-    if (bal > 1 && key > node->left->key) {     /* Left Right */
+    if (bal > 1 && key > node->left->key) {     
         node->left = rotateLeft(node->left);
         return rotateRight(node);
     }
-    if (bal < -1 && key < node->right->key) {   /* Right Left */
+    if (bal < -1 && key < node->right->key) {   
         node->right = rotateRight(node->right);
         return rotateLeft(node);
     }
