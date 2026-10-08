@@ -55,10 +55,6 @@ void linkNodes(Node *y, Node *x)
     } else {
         y->left = x->child;
 
-
-
-
-
         y->right = x->child->right;
         x->child->right->left = y;
         x->child->right = y;
@@ -85,7 +81,7 @@ void consolidate()
     for (i = 0; i < nroots; i++) {
         x = roots[i];
         d = x->degree;
-        while (A[d] != NULL) {                 /* two trees of equal degree */
+        while (A[d] != NULL) {                 
             y = A[d];
             if (x->key > y->key) {
                  tmp = x; x = y; y = tmp;
