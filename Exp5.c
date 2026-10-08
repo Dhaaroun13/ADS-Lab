@@ -41,7 +41,6 @@ void insert(int key)
     total++;
 }
 
-/* remove y from the root list and make it a child of x */
 void linkNodes(Node *y, Node *x)
 {
     y->left->right = y->right;
