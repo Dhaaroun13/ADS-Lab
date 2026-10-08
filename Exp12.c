@@ -6,8 +6,7 @@
 
 int bitArray[SIZE] = {0};
 
-/* three different hash functions; each returns a bit position */
-int hash1(const char *s)                    /* djb2 */
+int hash1(const char *s)                    
 {
     unsigned long h = 5381;
     int i;
@@ -16,7 +15,7 @@ int hash1(const char *s)                    /* djb2 */
     return (int)(h % SIZE);
 }
 
-int hash2(const char *s)                    /* sdbm */
+int hash2(const char *s)                    
 {
     unsigned long h = 0;
     int i;
@@ -25,7 +24,7 @@ int hash2(const char *s)                    /* sdbm */
     return (int)(h % SIZE);
 }
 
-int hash3(const char *s)                        /* polynomial, base 31 */
+int hash3(const char *s)                        
 {
     unsigned long h = 0;
     int i;
@@ -53,8 +52,6 @@ void display()
     int i;
     printf("\nBloom Filter (%d bits):\n", SIZE);
     for (i = 0; i < SIZE; i++)
-
-
 
 
         printf("%d", bitArray[i]);
