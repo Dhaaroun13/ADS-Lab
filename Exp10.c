@@ -59,9 +59,6 @@ int main()
         y = find(parent, edges[i].v);
 
 
-
-
-
         if (x != y) {
             printf("%d-%d (%d)\n", edges[i].u, edges[i].v, edges[i].w);
             cost += edges[i].w;
